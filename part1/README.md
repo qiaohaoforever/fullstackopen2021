@@ -1,3 +1,100 @@
+# 学习笔记
+
+## javascript
+
+const实际上并没有定义一个变量，而是定义了一个常量，也就是其值不能再更改了。 相对应的，let定义了一个普通变量。
+
+### Arrays
+
+```
+const t = [1, -1, 3]
+
+t.push(5)
+
+console.log(t.length) // 4 is printed
+console.log(t[1])     // -1 is printed
+
+t.forEach(value => {
+  console.log(value)  // numbers 1, -1, 3, 5 are printed, each to own line
+})        
+```
+
+箭头语法
+
+在前面的示例中，使用了push方法将一个新元素添加到数组中。 在使用 React 时，经常使用函数式编程的技巧。 函数编程范型的一个特点，就是使用不可变的数据结构。 在React代码中，最好使用concat方法 ，因为它不向数组中添加元素，而是创建一个新数组，新数组中包含了旧数组和新的元素。
+
+#### map 方法
+
+基于旧的数组，map 创建一个 新的数组，旧数组的每一项作为函数的入参来创建新的元素。
+
+```
+const t = [1, 2, 3]
+
+const m1 = t.map(value => value * 2)
+console.log(m1)   // [2, 4, 6] is printed
+```
+
+#### 解构赋值
+
+```
+const t = [1, 2, 3, 4, 5]
+
+const [first, second, ...rest] = t
+
+console.log(first, second)  // 1, 2 is printed
+console.log(rest)          // [3, 4 ,5] is printed
+```
+
+### Objects
+
+使用对象字面量 ，就是通过在大括号中列出它的属性来实现的
+
+```
+const object1 = {
+  name: 'Arto Hellas',
+  age: 35,
+  education: 'PhD',
+}
+
+const object2 = {
+  name: 'Full Stack web application development',
+  level: 'intermediate studies',
+  size: 5,
+}
+
+const object3 = {
+  name: {
+    first: 'Dan',
+    last: 'Abramov',
+  },
+  grades: [2, 3, 5, 3],
+  department: 'Stanford University',
+}
+```
+
+### Functions
+
+定义箭头函数的完整过程如下:
+
+```
+const sum = (p1, p2) => {
+  console.log(p1)
+  console.log(p2)
+  return p1 + p2
+}
+```
+
+有两种方法可定义函数function; 一种是在函数声明中给一个名字。
+
+```
+function product(a, b) {
+  return a * b
+}
+
+const result = product(2, 6)
+// result is now 12
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
